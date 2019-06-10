@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import { TableSearchComponent } from './table-search.component';
+import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { TableSearchComponent } from './table-search.component';
   imports: [
     CommonModule,
 
-    MatInputModule,
+    MaterialModule,
 
     ReactiveFormsModule,
   ]

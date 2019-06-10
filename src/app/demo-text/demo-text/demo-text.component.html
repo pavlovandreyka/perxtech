@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<div class="main-wrap">
+
+  <div class="mode-switcher">
+    <span class="mode-switcher-title">Automation insert text to the message block:</span>
+    <mat-slide-toggle [checked]="modeSwitcher" (change)="handlerSwitch()">Toggle mode</mat-slide-toggle>
+  </div>
+
+  <div class="form-field-wrap">
+    <p class="form-field-title">
+      Please type your message:
+    </p>
+
+    <div class="form-field-input">
+      <mat-form-field>
+        <textarea matInput [formControl]="formField" placeholder="Message"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="form-action" *ngIf="modeSwitcher">
+      <button mat-raised-button color="primary"
+              (click)="setMessage()"
+      >
+        Apply your message
+      </button>
+    </div>
+  </div>
+
+  <div class="message">
+    <p class="message-title">
+      Example message:
+    </p>
+    <p class="user-message" appInsertText [message]="message">
+    </p>
+  </div>
+</div>
+

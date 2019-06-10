@@ -34,13 +34,8 @@ export class TableSearchComponent implements OnInit, OnDestroy {
         distinctUntilChanged()
       )
       .subscribe((value) => {
-
         const val = value ? value : '';
         this.changeSearch.emit(val);
-        this.dataSource.filter = val;
-      }, error => {
-        console.warn(error);
-        this.dataSource.filter = '';
       });
   }
 
